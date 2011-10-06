@@ -1,0 +1,6 @@
+#!/bin/bash
+export SSW=/home/isavnin/ssw
+export IDL_PATH=.:\+\$SSW/stereo/dev
+export SSW_INSTR="secchi lasco"
+tcsh -c "source $SSW/gen/setup/setup.ssw; $SSW/gen/setup/ssw_idl"
+
