@@ -116,7 +116,7 @@ pro fm_process, path, $
     imlasco = scaled_mass_soho, $
     hdrlasco = fixed_header_soho, $
     sgui = fit_params, swire = fit_frame, $
-    maxheight = 30, $
+    maxheight = 40, $
     sparaminit = sparaminit
 
   ; close all the windows
@@ -130,14 +130,14 @@ pro fm_process, path, $
     header_sta, header_stb, fit_frame, sgui = fit_params, $
     imlasco = scaled_mass_soho, $
     hdrlasco = fits_header_soho
-  
+
   ; write fit params into temporary file
   openw, 1, './.params'
   printf, 1, fit_params.lon, fit_params.lat, fit_params.rot, fit_params.han, $
              fit_params.hgt, fit_params.rat, $
              FORMAT='("{lon:", F6.1, ", lat:", F6.1, ", rot:", F6.1, ", han:", F6.1, ", hgt:", F6.1, ", rat:", F6.2, "}")'
   close, 1
-  
+
   ; leave the data directory
   cd, '..'
 end
